@@ -275,7 +275,7 @@ class _WaveWidgetState extends State<WaveWidget> with TickerProviderStateMixin {
               break;
           }
         });
-        if(isAnimate)
+        if(widget.isAnimate)
           controller.forward();
         return value;
       }).toList();
