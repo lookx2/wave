@@ -217,6 +217,7 @@ class WaveWidget extends StatefulWidget {
   final Color? backgroundColor;
   final DecorationImage? backgroundImage;
   final bool isLoop;
+  final bool isAnimate;
 
   WaveWidget({
     required this.config,
@@ -229,6 +230,7 @@ class WaveWidget extends StatefulWidget {
     this.backgroundColor,
     this.backgroundImage,
     this.isLoop = true,
+    this.isAnimate = false,
   });
 
   @override
@@ -273,7 +275,8 @@ class _WaveWidgetState extends State<WaveWidget> with TickerProviderStateMixin {
               break;
           }
         });
-        controller.forward();
+        if(isAnimate)
+          controller.forward();
         return value;
       }).toList();
 
